@@ -206,28 +206,6 @@
                 color: #444;
             }
         }
-
-        /* Countdown Timer Styling */
-        .countdown-container {
-            text-align: center;
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-            margin: 30px 0;
-        }
-
-        .countdown-container h2 {
-            font-size: 22px;
-            color: #333;
-            margin-bottom: 15px;
-        }
-
-        .time {
-            font-size: 2.5em;
-            color: #007bff;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -259,56 +237,10 @@
 
             <h3>Projects</h3>
             <ul>
-                <li>Medical Records Management System</li>
-                <li>Data Analytics Project on Health Statistics</li>
+                <li>Medical Records Management System</a></li>
+                <li>Data Analytics Project on Health Statistics</a></li>
             </ul>
-
-            <!-- Countdown Timer Section -->
-            <div class="countdown-container">
-                <h2>Time Since Quitting</h2>
-                <div class="time" id="countdown">Loading...</div>
-            </div>
         </section>
     </div>
-
-    <!-- JavaScript for Countdown Timer -->
-    <script>
-        // Function to update the countdown timer
-        function updateCountdown() {
-            // Get the current time
-            const now = new Date();
-
-            // Create a Date object for yesterday's 5:00 AM
-            const yesterday5AM = new Date(now);
-            yesterday5AM.setDate(now.getDate() - 1); // Subtract one day
-            yesterday5AM.setHours(5, 0, 0, 0); // Set time to 5:00:00 AM
-
-            // Calculate the difference in milliseconds
-            const difference = now - yesterday5AM;
-
-            // Ensure the difference is not negative
-            const diffInSeconds = Math.max(0, Math.floor(difference / 1000));
-
-            // Calculate hours, minutes, and seconds
-            const hours = Math.floor(diffInSeconds / 3600);
-            const minutes = Math.floor((diffInSeconds % 3600) / 60);
-            const seconds = diffInSeconds % 60;
-
-            // Format the time as HH:MM:SS
-            const formattedTime = 
-                `${hours.toString().padStart(2, '0')}:` +
-                `${minutes.toString().padStart(2, '0')}:` +
-                `${seconds.toString().padStart(2, '0')}`;
-
-            // Display the formatted time in the countdown element
-            document.getElementById('countdown').textContent = formattedTime;
-        }
-
-        // Initial call to display the countdown immediately upon page load
-        updateCountdown();
-
-        // Update the countdown every second (1000 milliseconds)
-        setInterval(updateCountdown, 1000);
-    </script>
 </body>
 </html>
